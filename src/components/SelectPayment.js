@@ -64,10 +64,7 @@ const SelectPayment = ({
   }, [item, slider, cost, setCost, begRequired, itemsCost]);
 
   return (
-    <Box
-      sx={{ width: 320, maxWidth: "90%", mt: 0 }}
-      className="main main-modal"
-    >
+    <Box sx={{ width: 320, mt: 0 }} className="main main-modal">
       <Typography align="center" color="#e91e63">
         <h1 className="heading">Place Your Order</h1>
         <p>We'll use this info to pack your order Muhahahahaha</p>

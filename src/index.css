@@ -26,11 +26,15 @@ code {
   border-radius: 30px ;
 
 }
+.main-modal{
+  padding : 0;
+  /* width: 200px; */
+}
 
 
 img{
   height : auto;
-  width: 110px;
+  width: 90px;
 }
 .css-vqmohf-MuiButtonBase-root-MuiRadio-root {
   opacity: 0;
@@ -43,7 +47,12 @@ img{
 }
 
 .css-j204z7-MuiFormControlLabel-root{
-  margin-left: -26px !important;
+  margin-left: -30px !important;
+}
+
+
+.css-1a5icme {
+  display: none;
 }
 
 .text-area{

@@ -54,20 +54,20 @@ const Home = () => {
   };
 
   const handleDelete = (e) => {
-    console.log("item: ", e);
+    // console.log("item: ", e);
     const filtereChips = globalChips.filter((item) => {
       return item !== e;
     });
     setGlobalChips(filtereChips);
     const [qty, item] = e.name.split(" ");
-    console.log("Qty: ", qty, item);
+    // console.log("Qty: ", qty, item);
     const reduceAmout = itemsCost[item] * qty;
     if (e.beg) {
       setGlobalCost(globalCost - reduceAmout - 2);
     } else {
       setGlobalCost(globalCost - reduceAmout);
     }
-    console.log("GC", globalCost);
+    // console.log("GC", globalCost);
     if (isNaN(globalCost)) {
       setGlobalCost(0);
     }
@@ -83,7 +83,7 @@ const Home = () => {
       cost,
       globalChips,
     };
-    console.log("Payload", payload);
+    // console.log("Payload", payload);
     setDetails(payload);
   };
   const style = {
@@ -91,11 +91,12 @@ const Home = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 460,
+    width: 300,
     bgcolor: "background.paper",
-    border: "2px solid #000",
+    border: "none",
     borderRadius: "30px",
     boxShadow: 24,
+    outline: "none",
     p: 4,
   };
 
