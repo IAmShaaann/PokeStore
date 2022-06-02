@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import Slider from "@mui/material/Slider";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,13 +8,6 @@ import Select from "@mui/material/Select";
 import Switch from "@mui/material/Switch";
 import Typography from "@material-ui/core/Typography";
 
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
-import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import Grid from "@material-ui/core/Grid";
 
@@ -38,12 +30,12 @@ const SelectPayment = ({
   const [begRequired, setBegRequire] = useState(true);
 
   const calculateCost = () => {
-    if (!item || slider == 0) {
+    if (!item || slider === 0) {
       setCost(0);
     }
     var selectedItem = itemsCost[item];
     var totalCost = selectedItem * slider;
-    if (begRequired && slider != 0) {
+    if (begRequired && slider !== 0) {
       totalCost += 2;
     }
     setCost(totalCost);
@@ -66,10 +58,10 @@ const SelectPayment = ({
 
   useEffect(() => {
     calculateCost();
-    if (cost == NaN) {
+    if (isNaN(cost)) {
       setCost(0);
     }
-  }, [item, slider, label]);
+  }, [item, slider, label, calculateCost, cost, setCost]);
 
   return (
     <Box
