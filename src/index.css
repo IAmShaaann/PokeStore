@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(https://images.unsplash.com/photo-1605979257913-1704eb7b6246?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.main{
+  width: 25%;
+  margin: 2rem auto;
+  padding: 2rem 3rem;
+  background-color: #fff;
+  border-radius: 30px ;
+
+}
+
+.main-modal{
+  
+}
+img{
+  height : auto;
+  width: 110px;
+}
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root {
+  opacity: 1;
+  transform: translateX(70px);
+  z-index: -2;
+}
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked + .pole-image{
+  border: 1px solid black;
+}
+
+.Mui-checked{
+  
+}
+.text-area{
+
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.slider{
+  margin-top: 3rem;
+}
+
+.btn{
+  width: 50%;
+  margin: 0 auto ;
+}
+
+.heading, Button{
+  color: #e91e63
 }
