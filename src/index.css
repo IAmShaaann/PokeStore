@@ -33,12 +33,16 @@ img{
   width: 110px;
 }
 .css-vqmohf-MuiButtonBase-root-MuiRadio-root {
-  opacity: 1;
+  opacity: 0;
   transform: translateX(70px);
   z-index: -2;
 }
-.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked + .pole-image{
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked + .poke-image{
   border: 1px solid black;
+}
+
+.css-j204z7-MuiFormControlLabel-root{
+  margin-left: -26px !important;
 }
 
 .text-area{

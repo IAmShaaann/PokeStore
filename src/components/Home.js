@@ -161,14 +161,25 @@ const Home = () => {
         </Select>
       </FormControl>
       <p>Choose your starter pokemon.</p>
-      <FormControl sx={{ display: "flex", ml: -4, maxWidth: "90%" }}>
+      <FormControl
+        sx={{
+          display: "flex",
+          m: 0,
+        }}
+      >
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="female"
           row
           name="radio-buttons-group"
           onChange={(e) => {}}
-          sx={{ display: "flex", width: "150%" }}
+          sx={{
+            display: "flex",
+            flexWrap: "noWrap",
+            // justifyContent: "space-between",
+            maxWidth: "100%",
+            ml: 0,
+          }}
         >
           {region === "Kanto" ? (
             <>
@@ -185,6 +196,7 @@ const Home = () => {
               <FormControlLabel
                 className="input"
                 value="Bulbasaur"
+                sx={{ ml: 0 }}
                 control={<Radio name="input" />}
                 onClick={(e) => {
                   setPokemon(e.target.defaultValue);
