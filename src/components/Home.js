@@ -142,7 +142,7 @@ const Home = () => {
       />
       <p>How far is your nearest pokemon center ? (in KMs) </p>
       {/* Select Dropdown */}
-      <FormControl varient="filled" sx={{ m: 1, width: 400 }}>
+      <FormControl varient="filled" sx={{ m: 1, width: 400, maxWidth: "90%" }}>
         <InputLabel id="demo-simple-select-label">
           What's your starting region ?
         </InputLabel>
@@ -161,7 +161,7 @@ const Home = () => {
         </Select>
       </FormControl>
       <p>Choose your starter pokemon.</p>
-      <FormControl sx={{ display: "flex" }}>
+      <FormControl sx={{ display: "flex", ml: -4, maxWidth: "90%" }}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="female"

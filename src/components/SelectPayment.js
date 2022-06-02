@@ -29,18 +29,6 @@ const SelectPayment = ({
   const label = { inputProps: { "aria-label": "ON" } };
   const [begRequired, setBegRequire] = useState(true);
 
-  const calculateCost = () => {
-    if (!item || slider === 0) {
-      setCost(0);
-    }
-    var selectedItem = itemsCost[item];
-    var totalCost = selectedItem * slider;
-    if (begRequired && slider !== 0) {
-      totalCost += 2;
-    }
-    setCost(totalCost);
-  };
-
   const findGlobalCost = () => {
     setGlobalCost(parseInt(globalCost + cost));
   };
@@ -57,11 +45,23 @@ const SelectPayment = ({
   };
 
   useEffect(() => {
+    const calculateCost = () => {
+      if (!item || slider === 0) {
+        setCost(0);
+      }
+      var selectedItem = itemsCost[item];
+      var totalCost = selectedItem * slider;
+      if (begRequired && slider !== 0) {
+        totalCost += 2;
+      }
+      setCost(totalCost);
+    };
+
     calculateCost();
     if (isNaN(cost)) {
       setCost(0);
     }
-  }, [item, slider, cost, setCost]);
+  }, [item, slider, cost, setCost, begRequired, itemsCost]);
 
   return (
     <Box
