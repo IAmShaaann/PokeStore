@@ -83,6 +83,7 @@ const Home = () => {
       cost,
       globalChips,
     };
+    console.log("df", document.getElementsByClassName("input")[0]);
     // console.log("Payload", payload);
     setDetails(payload);
   };
@@ -109,6 +110,7 @@ const Home = () => {
       <TextField
         id="standard-basic"
         label="Full name"
+        required
         variant="standard"
         sx={{ m: 1 }}
         value={fullname}
@@ -123,6 +125,7 @@ const Home = () => {
         id="standard-basic"
         label="Code name"
         variant="standard"
+        required
         sx={{ m: 1 }}
         value={codename}
         onChange={(e) => {
@@ -133,9 +136,10 @@ const Home = () => {
       />
       <Slider
         size="small"
-        defaultValue={70}
+        defaultValue={0}
         aria-label="Small"
         valueLabelDisplay="auto"
+        sx={{ color: "#e91e63" }}
         className="slider"
         onChange={(e) => {
           setSlider(e.target.value);
@@ -176,7 +180,8 @@ const Home = () => {
           onChange={(e) => {}}
           sx={{
             display: "flex",
-            flexWrap: "noWrap",
+            flexWrap: { xs: "wrap", md: "noWrap" },
+            flexDirection: { xs: "column", md: "row" },
             // justifyContent: "space-between",
             maxWidth: "100%",
             ml: 0,
@@ -197,7 +202,6 @@ const Home = () => {
               <FormControlLabel
                 className="input"
                 value="Bulbasaur"
-                sx={{ ml: 0 }}
                 control={<Radio name="input" />}
                 onClick={(e) => {
                   setPokemon(e.target.defaultValue);
@@ -382,18 +386,17 @@ const Home = () => {
         >
           <Box sx={style}>
             <div>
-              <h1>Name : {details?.fullname}</h1>
-              <h1>Codename : {details?.codename}</h1>
-              <h1>Nearest Pokemon : {details?.slider} KMs</h1>
-              <h1>Region : {details?.region}</h1>
-              <h1>Pokemon : {details?.pokemon}</h1>
-              <h1>
+              <h3>Name : {details?.fullname}</h3>
+              <h3>Codename : {details?.codename}</h3>
+              <h3>Nearest Pokemon : {details?.slider} KMs</h3>
+              <h3>Region : {details?.region}</h3>
+              <h3>Pokemon : {details?.pokemon}</h3>
+              <h3>
                 Chips :{" "}
                 {details?.globalChips?.map((chip) => {
-                  <br />;
                   return chip.name;
                 })}
-              </h1>
+              </h3>
             </div>
           </Box>
         </Modal>

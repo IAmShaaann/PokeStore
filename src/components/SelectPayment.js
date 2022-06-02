@@ -35,7 +35,7 @@ const SelectPayment = ({
 
   const provideChipDetails = () => {
     const newChip = {
-      name: slider + " " + item + "|",
+      name: slider + " " + item + " | ",
       beg: begRequired,
     };
     setChipInfo(newChip);
@@ -108,6 +108,7 @@ const SelectPayment = ({
         <Switch
           {...label}
           defaultChecked
+          // sx={{ color: "#e91e63" }}
           onChange={() => {
             setBegRequire(!begRequired);
           }}
