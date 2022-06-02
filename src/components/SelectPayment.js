@@ -61,7 +61,7 @@ const SelectPayment = ({
     if (isNaN(cost)) {
       setCost(0);
     }
-  }, [item, slider, label, calculateCost, cost, setCost]);
+  }, [item, slider, cost, setCost]);
 
   return (
     <Box
