@@ -11,7 +11,6 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
@@ -25,9 +24,9 @@ const Home = () => {
   const [codename, setCodename] = useState("");
   const [slider, setSlider] = useState(0);
   const [region, setRegion] = useState("");
-  const [starterPokemon, setStarterPokemon] = useState("");
+  // const [starterPokemon, setStarterPokemon] = useState("");
   const [chipInfo, setChipInfo] = useState("");
-  const [showChipModal, setShowChipModal] = useState(false);
+  // const [showChipModal, setShowChipModal] = useState(false);
   const [open, setOpen] = useState(false);
   const [cost, setCost] = useState(0);
   const [globalCost, setGlobalCost] = useState(0);
@@ -35,7 +34,7 @@ const Home = () => {
   const [globalChips, setGlobalChips] = useState([]);
   const [details, setDetails] = useState(null);
   const [mainModal, setMainModal] = useState(false);
-  const chips = [];
+  // const chips = [];
 
   const itemsCost = {
     pokeball: 5,
@@ -57,7 +56,7 @@ const Home = () => {
   const handleDelete = (e) => {
     console.log("item: ", e);
     const filtereChips = globalChips.filter((item) => {
-      return item != e;
+      return item !== e;
     });
     setGlobalChips(filtereChips);
     const [qty, item] = e.name.split(" ");
@@ -69,7 +68,7 @@ const Home = () => {
       setGlobalCost(globalCost - reduceAmout);
     }
     console.log("GC", globalCost);
-    if (globalCost == NaN) {
+    if (isNaN(globalCost)) {
       setGlobalCost(0);
     }
   };
@@ -168,12 +167,10 @@ const Home = () => {
           defaultValue="female"
           row
           name="radio-buttons-group"
-          onChange={(e) => {
-            setStarterPokemon(e.target.value);
-          }}
+          onChange={(e) => {}}
           sx={{ display: "flex", width: "150%" }}
         >
-          {region == "Kanto" ? (
+          {region === "Kanto" ? (
             <>
               {/* <div className="leftSide">
                 <label className="labelExpanded">
@@ -223,7 +220,7 @@ const Home = () => {
                 }
               />
             </>
-          ) : region == "Jhoto" ? (
+          ) : region === "Jhoto" ? (
             <>
               <FormControlLabel
                 value="Chikorita"
