@@ -34,8 +34,9 @@ img{
 }
 .css-vqmohf-MuiButtonBase-root-MuiRadio-root {
   opacity: 0;
-  transform: translateX(70px);
-  z-index: -2;
+  display: none;
+  /* transform: translateX(70px); */
+  /* z-index: -2; */
 }
 .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked + .poke-image{
   border: 1px solid black;
